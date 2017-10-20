@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>nEoYe&#39;s blog</title>
+  
+  <subtitle>刘文哲的技术博客 nEoYe&#39;s blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://neoyeelf.github.io/"/>
+  <updated>2017-10-20T08:40:41.000Z</updated>
+  <id>http://neoyeelf.github.io/</id>
+  
+  <author>
+    <name>刘文哲</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ArrayList和LinkedList的效率对比</title>
+    <link href="http://neoyeelf.github.io/2017/10/03/ArrayList%E5%92%8CLinkedList%E7%9A%84%E6%95%88%E7%8E%87%E5%AF%B9%E6%AF%94/"/>
+    <id>http://neoyeelf.github.io/2017/10/03/ArrayList和LinkedList的效率对比/</id>
+    <published>2017-10-03T03:28:00.000Z</published>
+    <updated>2017-10-20T08:40:41.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;List相信大家都使用得很多，其中ArrayList和LinkedList是使用最多的2个，本文将从源码角度解读2者的异同，效率和使用场景。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="http://neoyeelf.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="后台开发" scheme="http://neoyeelf.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="JAVA" scheme="http://neoyeelf.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/JAVA/"/>
+    
+    
+      <category term="JAVA" scheme="http://neoyeelf.github.io/tags/JAVA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>API设计和代码结构组织心得</title>
+    <link href="http://neoyeelf.github.io/2016/03/10/PHP%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E6%97%B6%E7%9A%84api%E8%AE%BE%E8%AE%A1%E5%92%8C%E4%BB%A3%E7%A0%81%E7%BB%84%E7%BB%87%E5%BF%83%E5%BE%97/"/>
+    <id>http://neoyeelf.github.io/2016/03/10/PHP开发项目时的api设计和代码组织心得/</id>
+    <published>2016-03-10T09:22:11.000Z</published>
+    <updated>2017-10-20T08:43:09.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近的一个项目尝试使用了laravel框架，在项目完成后，有关代码组织结构方面做一些总结，写一些心得体会。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="http://neoyeelf.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="后台开发" scheme="http://neoyeelf.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="PHP" scheme="http://neoyeelf.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/PHP/"/>
+    
+    
+      <category term="PHP" scheme="http://neoyeelf.github.io/tags/PHP/"/>
+    
+      <category term="laravel" scheme="http://neoyeelf.github.io/tags/laravel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JAVA多线程学习</title>
+    <link href="http://neoyeelf.github.io/2016/03/10/JAVA%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://neoyeelf.github.io/2016/03/10/JAVA多线程学习/</id>
+    <published>2016-03-10T01:31:36.000Z</published>
+    <updated>2017-10-20T08:31:17.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本篇文章主要介绍了Java多线程的基本实现，常用方法和高级方法&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="http://neoyeelf.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="后台开发" scheme="http://neoyeelf.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="JAVA" scheme="http://neoyeelf.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/JAVA/"/>
+    
+    
+      <category term="JAVA" scheme="http://neoyeelf.github.io/tags/JAVA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>solr新手指南</title>
+    <link href="http://neoyeelf.github.io/2016/02/24/solr%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/"/>
+    <id>http://neoyeelf.github.io/2016/02/24/solr新手指南/</id>
+    <published>2016-02-24T12:08:51.000Z</published>
+    <updated>2017-10-20T08:44:15.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近项目中有用到solr作为搜索引擎，然后感觉中文资料比较少，所以自己结合网上的一些资料和英文文档写出了以下指南，有错误的地方还望指正。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="后台开发，solr" scheme="http://neoyeelf.github.io/tags/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91%EF%BC%8Csolr/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP的基础知识</title>
+    <link href="http://neoyeelf.github.io/2016/02/24/php%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>http://neoyeelf.github.io/2016/02/24/php基础知识/</id>
+    <published>2016-02-24T12:08:14.000Z</published>
+    <updated>2017-10-20T08:42:47.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这篇文章主要介绍了PHP的基础语法和知识点，适合PHP新手和刚入门的web后台开发新手&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="PHP" scheme="http://neoyeelf.github.io/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>YII框架学习——有关ActiveRecord的一些坑</title>
+    <link href="http://neoyeelf.github.io/2015/07/24/YII%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E6%9C%89%E5%85%B3ActiveRecord%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/"/>
+    <id>http://neoyeelf.github.io/2015/07/24/YII框架学习——有关ActiveRecord的一些坑/</id>
+    <published>2015-07-24T12:08:38.000Z</published>
+    <updated>2017-10-20T08:43:49.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在这里我想总结一下我学习YII框架的过程中，踩过的那些坑。希望能给YII框架的初学者一些帮助，使大家能更快地熟悉YII框架。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="后台开发，PHP，YII" scheme="http://neoyeelf.github.io/tags/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91%EF%BC%8CPHP%EF%BC%8CYII/"/>
+    
+  </entry>
+  
+</feed>

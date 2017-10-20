@@ -1,0 +1,669 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+
+    <title>PHP的基础知识 | 刘文哲的技术博客 nEoYe&#39;s blog</title>
+    <meta name="author" content="刘文哲">
+    
+    <meta name="description" content="人生本不易">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="PHP的基础知识"/>
+    <meta property="og:site_name" content="nEoYe&#39;s blog"/>
+
+    
+    <meta property="og:image" content=""/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="nEoYe&#39;s blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/prettify-tomorrow-night-eighties.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+
+    <nav class="light-blue">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">nEoYe&#39;s blog</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            首页
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            归档
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            分类
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            关于
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            搜索
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav indigo darken-1" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="http://7nj36a.com1.z0.glb.clouddn.com/9b8533e198116029c90418baf8aba61a.jpg?imageView2/1/w/200/h/200/q/100|imageslim" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">刘文哲</p>
+                        <p class="desc">后台开发/暴雪粉</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    首页
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    归档
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    分类
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    关于
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    搜索
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav indigo darken-1" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/技术/">
+                    技术 <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/技术/后台开发/">
+                    后台开发 <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/技术/后台开发/PHP/">
+                    PHP <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/技术/后台开发/JAVA/">
+                    JAVA <span class="right">2 篇</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">搜索</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>PHP的基础知识</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2016-02-24T12:08:14.000Z"><a href="/2016/02/24/php基础知识/">2016-02-24</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/PHP/" class="chip pink lighten-1">PHP</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    
+</div>
+
+
+            <div class="entry pink-link-context">
+                <p>这篇文章主要介绍了PHP的基础语法和知识点，适合PHP新手和刚入门的web后台开发新手<br><a id="more"></a></p>
+<p><strong>以下是我觉得学习php中较重要的几个语法和知识点，下面逐个说明</strong></p>
+<p><strong>什么是LAMP？</strong></p>
+<ul>
+<li>Linux+Apache+Mysql+PHP/Python一组常用来搭建动态网站或者服务器的开源软件，本身都是各自独立的程序，但是因为常被放在一起使用，拥有了越来越高的兼容度，共同组成了一个强大的Web应用程序平台。</li>
+<li>PHP（“PHP: Hypertext Preprocessor”，超文本预处理器的字母缩写）是一种被广泛应用的开放源代码的多用途脚本语言，它可嵌入到 HTML中，尤其适合 web 开发。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;title&gt;Example&lt;/title&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line"></div><div class="line">        &lt;?php</div><div class="line">        echo &quot;Hi, I&apos;m a PHP script!&quot;;</div><div class="line">        ?&gt;</div><div class="line"></div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>php的常用场景是作为web网站的后端语言，所以我觉得有必要了解一个浏览器的完整请求流程的步骤。<a href="http://article.yeeyan.org/view/54517/91367" target="_blank" rel="external">参考链接</a><ul>
+<li>通过访问的域名去DNS服务器查找对应的IP</li>
+<li>找到ip后，浏览器给web服务器发送一个HTTP请求。这里面还会涉及到浏览器重定向之类的，不在这详细赘述。</li>
+<li>服务器处理请求（后台的工作重点，php，mysql，缓存等）</li>
+<li>服务器返回一个html响应</li>
+<li>浏览器接收数据，进行渲染，呈现页面</li>
+<li>浏览器还会请求静态文件和发送异步（AJAX）请求</li>
+</ul>
+</li>
+</ul>
+<p><strong>PHP的语法</strong></p>
+<ul>
+<li>php的标签</li>
+</ul>
+<p>php的标记<code>&lt;?php</code>和<code>?&gt;</code>，如果文件内容是纯 PHP 代码，最好在文件末尾删除 PHP 结束标记。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">/*This is a multi line comment</div><div class="line">yet another line of comment*/</div><div class="line"></div><div class="line">echo &quot;Hello world&quot;;</div><div class="line"></div><div class="line">//some code</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;This is going to be ignored by PHP and displayed by the browser.&lt;/p&gt;</div><div class="line">&lt;?php echo &apos;While this is going to be parsed.&apos;; ?&gt;</div><div class="line">&lt;p&gt;This will also be ignored by PHP and displayed by the browser.&lt;/p&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>数据类型</li>
+</ul>
+<p>php支持8种原始数据类型，四种标量类型：boolean（布尔型）、integer（整型）、float（浮点型，也称作 double)、string（字符串），两种符合类型：array（数组）、object（对象），两种特殊类型：resource（资源）、NULL（无类型）。<br>php是弱类型语言，所以在变量赋值时无需指定类型，php语言会自动识别。查看变量的值和类型可以用var_dump()；echo一般用来输出值，常用于输出字符串和数字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">$a_bool = TRUE;   // a boolean</div><div class="line">$a_str  = &quot;foo&quot;;  // a string</div><div class="line">$a_str2 = &apos;foo&apos;;  // a string</div><div class="line">$an_int = 12;     // an integer</div><div class="line">$a_array = array(); //an array</div><div class="line">$exception = new Exception(); //an object</div></pre></td></tr></table></figure>
+<p>php的数组，是一种key-value型的数组，key可以是integer或者string。value 可以是任意类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$array = array(&apos;1&apos; =&gt; 1,</div><div class="line">               2 =&gt; &apos;2&apos;,</div><div class="line">               &apos;array&apos; =&gt; array(array(&apos;1&apos;)));</div><div class="line"></div><div class="line">var_dump($array[&apos;1&apos;]);</div><div class="line">var_dump($array[2]);</div><div class="line">var_dump($array[&apos;array&apos;][0][0]);</div><div class="line">echo count($array);</div><div class="line"></div><div class="line">//foreach($array as $k =&gt; $v)</div><div class="line">foreach($array as $row)&#123;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>数据类型的转换，有自动转换和强制转换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$foo = 5 + &quot;10 Little Piggies&quot;;</div><div class="line">echo $foo;</div><div class="line">$foo = 5 . &quot;10 Little Piggies&quot;;</div><div class="line">echo $foo;</div><div class="line">$foo = 1.3 + &quot;0&quot;;</div><div class="line">echo $foo;</div><div class="line"></div><div class="line">var_dump((int)$foo) ;</div></pre></td></tr></table></figure>
+<p>数组是php里经常使用的数据类型，所以基本的数组相关操作也要熟练，如遍历（key,value），排序，数组合并等。</p>
+<ul>
+<li>比较运算符</li>
+</ul>
+<p>‘==’号和‘===’号的差别在于，‘==’号会忽略2个值的类型，而‘===’除了值相等外还会比较2个值的类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$a = 5;</div><div class="line">var_dump($a == &apos;5&apos;); //return true</div><div class="line">var_dump($a == 5); //return true</div><div class="line">var_dump($a === &apos;5&apos;); //return false</div><div class="line">var_dump($a === 5); //return true</div><div class="line"></div><div class="line">if(strpos(&apos;abcd&apos;, &apos;a&apos;))&#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">if(strpos(&apos;abcd&apos;, &apos;a&apos;) !== false)&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>字符串的表示</p>
+<ul>
+<li>单引号：不会对字符串里的特殊字符和变量进行解析</li>
+<li>双引号：会对字符串里的特殊字符，如’\n’和’$name’进行解析。</li>
+<li>Nowdoc结构：和单引号功能一样，不过更加适合于表示多行的字符串，而不用用字符串连接符</li>
+<li>Heredoc结构：和双引号功能一样，不过更加适合于表示多行的字符串，而不用用字符串连接符<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$single_quotes = &apos;this is a simple string&apos;;</div><div class="line"></div><div class="line">$price = 6.5;</div><div class="line">$double_quotes = &quot;the apple cost $price dollars. \n it&apos;s too expensive!&quot;</div><div class="line"></div><div class="line">$str = &lt;&lt;&lt;&apos;EDO&apos;</div><div class="line">this is a example of string</div><div class="line">using nowdoc sybtax</div><div class="line">EDO;</div><div class="line"></div><div class="line">$a = &apos;heredoc&apos;;</div><div class="line">$str = &lt;&lt;&lt;EDO</div><div class="line">this is a example of string</div><div class="line">using $a sybtax</div><div class="line">EDO;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>类，函数，属性</p>
+</li>
+</ul>
+<p>和其他面向对象的函数一样，php里面也有面向对象的许多特性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">//MY_Controller继承CI_Controller</div><div class="line">class MY_Controller extends CI_Controller</div><div class="line">&#123;</div><div class="line">    public $public_data;//公共属性</div><div class="line">    private $private_data;//私有属性</div><div class="line">    </div><div class="line">    function __construct()</div><div class="line">    &#123;</div><div class="line">        parent::__construct();//继承构造方法</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    //公共方法</div><div class="line">    public function response($status)</div><div class="line">    &#123;</div><div class="line">        $error_code = $this-&gt;config-&gt;item($status, &apos;status&apos;);</div><div class="line"></div><div class="line">        $return_data = array(</div><div class="line">            &apos;msg&apos; =&gt; $error_code[&apos;msg&apos;],</div><div class="line">            &apos;code&apos; =&gt; $error_code[&apos;code&apos;],</div><div class="line">        );</div><div class="line"></div><div class="line">        return $return_data;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    //私有方法，无法继承</div><div class="line">    private function func()</div><div class="line">    &#123;</div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//Test类继承MY_Controller类</div><div class="line">class Test extends MY_Controller</div><div class="line">&#123;</div><div class="line">    function __construct()</div><div class="line">    &#123;</div><div class="line">        parent::__construct();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    //调用MY_Controller里的response($status)公共方法</div><div class="line">    function output()</div><div class="line">    &#123;</div><div class="line">        echo json_encode($this-&gt;response(&apos;success&apos;));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当然还有静态属性、方法，接口，抽象类等，具体戳：<a href="http://php.net/language.oop5" target="_blank" rel="external">php面向对象编程</a></p>
+<ul>
+<li>全局变量</li>
+</ul>
+<p>PHP中的许多预定义变量都是“超全局的”，这意味着它们在一个脚本的全部作用域中都可用。你需要知道他们的含义，了解其使用场合。具体的全局变量参数戳：<a href="http://www.w3school.com.cn/php/php_superglobals.asp" target="_blank" rel="external">参考链接</a></p>
+<ul>
+<li>php的扩展</li>
+</ul>
+<p>php的强大之一在于其拥有许多扩展，在你需要实现一个功能之前，首先查看php是否已经实现了相应扩展。如果有需求的话，还可以自己去写php的扩展，相关教程戳<a href="http://www.laruence.com/2009/04/28/719.html" target="_blank" rel="external">用C/C++扩展你的php</a></p>
+<ul>
+<li>连接数据库</li>
+</ul>
+<p>PHP 中的 mysql 扩展已经不再进行新的开发了，并且已经在 PHP 5.5.0 版本中正式被废弃，这意味着它将会在接下来的更新中被移除。所以现在推荐使用 mysqli 或 PDO 来取代 mysql 扩展</p>
+<p>PDO示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">// PDO + MySQL</div><div class="line">$pdo = new PDO(&apos;mysql:host=example.com;dbname=database&apos;, &apos;user&apos;, &apos;password&apos;);</div><div class="line">$statement = $pdo-&gt;query(&quot;SELECT some_field FROM some_table&quot;);</div><div class="line">$row = $statement-&gt;fetch(PDO::FETCH_ASSOC);</div><div class="line">echo htmlentities($row[&apos;some_field&apos;]);</div><div class="line"></div><div class="line">// PDO + SQLite</div><div class="line">$pdo = new PDO(&apos;sqlite:/path/db/foo.sqlite&apos;);</div><div class="line">$statement = $pdo-&gt;query(&quot;SELECT some_field FROM some_table&quot;);</div><div class="line">$row = $statement-&gt;fetch(PDO::FETCH_ASSOC);</div><div class="line">echo htmlentities($row[&apos;some_field&apos;]);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">$pdo = new PDO(&apos;sqlite:/path/db/users.db&apos;);</div><div class="line">$stmt = $pdo-&gt;prepare(&apos;SELECT name FROM users WHERE id = :id&apos;);</div><div class="line">$id = filter_input(INPUT_GET, &apos;id&apos;, FILTER_SANITIZE_NUMBER_INT); </div><div class="line">$stmt-&gt;bindParam(&apos;:id&apos;, $id, PDO::PARAM_INT);</div><div class="line">$stmt-&gt;execute();</div></pre></td></tr></table></figure>
+<p>上面这段代码在PDO 语句中使用了一个限制参数。这将对外部 ID 输入在发送给数据库之前进行转义来防止潜在的 SQL 注入攻击。具体戳：<a href="http://php.net/book.pdo" target="_blank" rel="external">了解PDO</a></p>
+<p>参考链接：<a href="http://laravel-china.github.io/php-the-right-way/" target="_blank" rel="external">php之道</a>，<a href="https://www.shiyanlou.com" target="_blank" rel="external">实验楼</a></p>
+
+                
+<p class="pink-link-context">
+    <a href="/2016/02/24/solr新手指南/" rel="next" title="solr新手指南">
+    上一篇：solr新手指南
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/2015/07/24/YII框架学习——有关ActiveRecord的一些坑/" rel="next" title="YII框架学习——有关ActiveRecord的一些坑">
+    下一篇：YII框架学习——有关ActiveRecord的一些坑
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+</div>
+
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="菜单"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer light-blue darken-1">
+    
+    <div class="footer-container container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">社交</h5>
+                
+                    <a class="social-link" href="http://weibo.com/2018329974" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="https://github.com/NeoyeElf" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                    <a class="social-link" href="atom.xml" target="_blank">
+                        <i class="fa fa-2x fa-rss"></i>
+                    </a>
+                
+                
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+    <div class="site-visitors-container white-text">
+        <span>
+            <i class="fa fa-user"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+        </span>
+        <span>&nbsp;|&nbsp;</span>
+        <span>
+            <i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+        </span>
+    </div>
+
+
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">友情链接</h5>
+                
+                    <a class="social-link" href="http://raytaylorlin.com/" target="_blank">raytaylorlin的技术博客</a>
+                
+                    <a class="social-link" href="http://tutuge.me/" target="_blank">土土哥的技术博客</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2016 neoyeelf.github.io, All rights reserved.
+            <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+            // 添加new标签
+            $('.menu-about').append('<span class="new badge pink"></span>');
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=63923059" charset="UTF-8"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+</body>
+</html>
