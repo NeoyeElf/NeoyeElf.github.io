@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://neoyeelf.github.io/"/>
-  <updated>2017-10-20T08:40:41.000Z</updated>
+  <updated>2017-11-02T12:41:59.000Z</updated>
   <id>http://neoyeelf.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>利用docker-compose快速部署php-fpm+nginx环境</title>
+    <link href="http://neoyeelf.github.io/2017/11/02/%E5%88%A9%E7%94%A8docker-compose%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2php-fpm+nginx%E7%8E%AF%E5%A2%83/"/>
+    <id>http://neoyeelf.github.io/2017/11/02/利用docker-compose快速部署php-fpm+nginx环境/</id>
+    <published>2017-11-02T12:30:00.000Z</published>
+    <updated>2017-11-02T12:41:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;“PHP是世界上最好的语言”，这个大家应该都没有争议把:)&lt;br&gt;但是当你用php写完一个项目后，你会发现，如果要将项目部署到线上，光是nginx+php-fpm的环境部署就要花费你许多时间。利用docker，可以大大节省我们的环境部署时间&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="http://neoyeelf.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="后台开发" scheme="http://neoyeelf.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="docker" scheme="http://neoyeelf.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/docker/"/>
+    
+    
+      <category term="PHP" scheme="http://neoyeelf.github.io/tags/PHP/"/>
+    
+      <category term="Nginx" scheme="http://neoyeelf.github.io/tags/Nginx/"/>
+    
+  </entry>
   
   <entry>
     <title>ArrayList和LinkedList的效率对比</title>

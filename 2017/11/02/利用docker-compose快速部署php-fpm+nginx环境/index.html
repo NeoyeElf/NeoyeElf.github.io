@@ -7,7 +7,7 @@
 
     
 
-    <title>PHP | 刘文哲的技术博客 nEoYe&#39;s blog</title>
+    <title>利用docker-compose快速部署php-fpm+nginx环境 | 刘文哲的技术博客 nEoYe&#39;s blog</title>
     <meta name="author" content="刘文哲">
     
     <meta name="description" content="人生本不易">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="利用docker-compose快速部署php-fpm+nginx环境"/>
     <meta property="og:site_name" content="nEoYe&#39;s blog"/>
 
     
@@ -217,42 +217,104 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
-        <span class="breadcrumb">当前位置（标签）</span>
+        <span class="breadcrumb">当前位置（分类目录）</span>
         
+            
+    
+    
+    <a class="breadcrumb" href="/categories/技术/">技术</a><a class="breadcrumb" href="/categories/技术/后台开发/">后台开发</a><a class="breadcrumb" href="/categories/技术/后台开发/docker/">docker</a>
+
 
         
-            <a class="breadcrumb" href="/tags/PHP/">PHP</a>
+
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>利用docker-compose快速部署php-fpm+nginx环境</h1>
+    
 
 
-    <div class="collection mt-0">
+            </div>
+            <time class="pink-link-context" datetime="2017-11-02T12:30:00.000Z"><a href="/2017/11/02/利用docker-compose快速部署php-fpm+nginx环境/">2017-11-02</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
-            <a href="/2017/11/02/利用docker-compose快速部署php-fpm+nginx环境/" class="collection-item grey-text text-darken-1">
-                <time datetime="2017-11-02T12:30:00.000Z">2017-11-02</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                利用docker-compose快速部署php-fpm+nginx环境
-            </a>
+            <a href="/tags/PHP/" class="chip pink lighten-1">PHP</a>
         
-            <a href="/2016/03/10/PHP开发项目时的api设计和代码组织心得/" class="collection-item grey-text text-darken-1">
-                <time datetime="2016-03-10T09:22:11.000Z">2016-03-10</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                API设计和代码结构组织心得
-            </a>
-        
-            <a href="/2016/02/24/php基础知识/" class="collection-item grey-text text-darken-1">
-                <time datetime="2016-02-24T12:08:14.000Z">2016-02-24</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                PHP的基础知识
-            </a>
+            <a href="/tags/Nginx/" class="chip pink lighten-1">Nginx</a>
         
     </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#前言"><span class="section table-of-contents-text">前言</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#正文"><span class="section table-of-contents-text">正文</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#docker简介"><span class="section table-of-contents-text">docker简介</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#极简部署方式"><span class="section table-of-contents-text">极简部署方式</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#改良版"><span class="section table-of-contents-text">改良版</span></a></li></ol></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#总结"><span class="section table-of-contents-text">总结</span></a></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <p>“PHP是世界上最好的语言”，这个大家应该都没有争议把:)<br>但是当你用php写完一个项目后，你会发现，如果要将项目部署到线上，光是nginx+php-fpm的环境部署就要花费你许多时间。利用docker，可以大大节省我们的环境部署时间<br><a id="more"></a></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>“PHP是世界上最好的语言”，这个大家应该都没有争议把:)<br>但是当你用php写完一个项目后，你会发现，如果要将项目部署到线上，光是nginx+php-fpm的环境部署就要花费你许多时间。利用docker，可以大大节省我们的环境部署时间。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h4 id="docker简介"><a href="#docker简介" class="headerlink" title="docker简介"></a>docker简介</h4><ul>
+<li>如果你还不了解docker，那么推荐你先通过其<a href="https://www.docker.com" target="_blank" rel="external">官网</a>和<a href="https://www.gitbook.com/book/yeasy/docker_practice" target="_blank" rel="external">docker-从入门到实践</a>来学习和熟悉docker</li>
+<li>这里简单介绍下docker compose:<br>Compose 项目是 Docker 官方的开源项目，负责实现对 Docker 容器集群的快速编排。docker compose项目允许用户通过一个单独的 docker-compose.yml 模板文件（YAML 格式）来定义一组相关联的应用容器为一个项目（project）。它可以方便地对一组docker容器的生命周期进行管理。</li>
+</ul>
+<h4 id="极简部署方式"><a href="#极简部署方式" class="headerlink" title="极简部署方式"></a>极简部署方式</h4><ul>
+<li>这里有一个外国友人开源的项目：<a href="https://github.com/mikechernev/dockerised-php" target="_blank" rel="external">dockerised-php</a>，将他的项目拉取下来，直接运行<code>docker-compose up</code>命令，便已经可以成功地启动php-fpm+nginx的环境。访问<a href="http://localhost:8080，便可以看到phpinfo的页面。code目录是放置php代码的地方" target="_blank" rel="external">http://localhost:8080，便可以看到phpinfo的页面。code目录是放置php代码的地方</a></li>
+<li>如果你的8080端口已经被占用，那么需要修改下docker-compose.yml文件里的nginx容器的端口映射</li>
+</ul>
+<h4 id="改良版"><a href="#改良版" class="headerlink" title="改良版"></a>改良版</h4><ul>
+<li><p>改进点：</p>
+<ul>
+<li>以上述方式启动后，php-fpm和nginx是以tcp的方式进行通信的。从原理上来说，unix socket方式肯定要比tcp的方式快而且消耗资源少，所以通常我将其改为了socket方式。</li>
+<li>同时我还将php-fpm.conf和www.conf提取了出来，使得可以方便地修改php-fpm的配置。这2个文件直接放在根目录即可，可以根据需求修改</li>
+<li>最后我将nginx的log通过VOLUME进行了挂载，我们应该尽量保持容器存储层不发生写操作。你可以根据你需要在docker-compose.yml中修改其存储路径，注意权限问题</li>
+</ul>
+</li>
+<li><p>docker-compose.yml</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">version: &apos;2.1&apos;</div><div class="line"></div><div class="line">services:</div><div class="line">    web:</div><div class="line">        image: nginx:latest</div><div class="line">        ports:</div><div class="line">            - &quot;8080:80&quot;</div><div class="line">        volumes:</div><div class="line">            - ./code:/code</div><div class="line">            - ./site.conf:/etc/nginx/conf.d/default.conf</div><div class="line">            - /private/var/log/nginx:/var/log/nginx</div><div class="line">            - &quot;phpsocket:/var/run&quot;</div><div class="line">        networks:</div><div class="line">            - code-network</div><div class="line">    php:</div><div class="line">        image: php:fpm</div><div class="line">        volumes:</div><div class="line">            - ./code:/code</div><div class="line">            - ./php-fpm.conf:/usr/local/etc/php-fpm.conf</div><div class="line">            - ./www.conf:/usr/local/etc/php-fpm.d/www.conf</div><div class="line">            - ./zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf</div><div class="line">            - &quot;phpsocket:/var/run&quot;</div><div class="line">        networks:</div><div class="line">            - code-network</div><div class="line"></div><div class="line">networks:</div><div class="line">    code-network:</div><div class="line">        driver: bridge</div><div class="line"></div><div class="line">volumes:</div><div class="line">    phpsocket:</div></pre></td></tr></table></figure>
+<p>通过定义<code>volumes: phpsocket:</code>，我们让php-fpm和nginx容器共享<code>/var/run</code>路径下的php7-fpm.sock文件，实现nginx和php-fpm直接使用unix socket通信。<br>另一个关键点是zz-docker.conf，在我尝试多次后(google+stackoverflow)，<strong>发现只有修改了zz-docker.conf里面的listen参数后，socket模式才起效果</strong>。不知道php-fpm的官方docker镜像为什么要用这样一个文件，这个我一直都还没弄懂其意图。当然其他参数还是在www.conf里面进行配置即可。下面是zz-docker.conf文件内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[global]</div><div class="line">daemonize = no</div><div class="line"></div><div class="line">[www]</div><div class="line">listen = /var/run/php7-fpm.sock</div><div class="line">listen.mode = 0666</div></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>利用docker，我们可以很方便地部署一套php的运行环境，而且也不用担心代码运行环境差异带来的麻烦。我写这篇文章只是抛砖引玉，实际使用中还要根据自己的项目进行一些个性化的修改。</p>
+<p>比如你需要使用的php库不在官方提供的镜像里，那么你可以修改php-fpm的镜像，或者自己构建镜像。同时如果你的项目还需要MySQL服务，也可以在此基础上继续加入MySQL镜像，只不过要注意其数据存储需要通过volumes挂载就行。</p>
+
+                
+
+
+<p class="pink-link-context">
+    <a href="/2017/10/03/ArrayList和LinkedList的效率对比/" rel="next" title="ArrayList和LinkedList的效率对比">
+    下一篇：ArrayList和LinkedList的效率对比
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
 
 
 </div>
