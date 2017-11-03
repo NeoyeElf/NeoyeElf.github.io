@@ -282,7 +282,7 @@
 <h4 id="改良版"><a href="#改良版" class="headerlink" title="改良版"></a>改良版</h4><ul>
 <li><p>改进点：</p>
 <ul>
-<li>以上述方式启动后，php-fpm和nginx是以tcp的方式进行通信的。从原理上来说，unix socket方式肯定要比tcp的方式快而且消耗资源少，所以通常我将其改为了socket方式。</li>
+<li>以上述方式启动后，php-fpm和nginx是以tcp的方式进行通信的。从原理上来说，unix socket方式肯定要比tcp的方式快而且消耗资源少，所以我将其改为了socket方式。</li>
 <li>同时我还将php-fpm.conf和www.conf提取了出来，使得可以方便地修改php-fpm的配置。这2个文件直接放在根目录即可，可以根据需求修改</li>
 <li>最后我将nginx的log通过VOLUME进行了挂载，我们应该尽量保持容器存储层不发生写操作。你可以根据你需要在docker-compose.yml中修改其存储路径，注意权限问题</li>
 </ul>
