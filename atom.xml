@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://neoyeelf.github.io/"/>
-  <updated>2017-11-14T02:16:40.000Z</updated>
+  <updated>2017-12-03T02:29:18.000Z</updated>
   <id>http://neoyeelf.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java：关于值传递你需要了解的事情</title>
+    <link href="http://neoyeelf.github.io/2017/12/03/Java%EF%BC%9A%E5%85%B3%E4%BA%8E%E5%80%BC%E4%BC%A0%E9%80%92%E4%BD%A0%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E7%9A%84%E4%BA%8B%E6%83%85/"/>
+    <id>http://neoyeelf.github.io/2017/12/03/Java：关于值传递你需要了解的事情/</id>
+    <published>2017-12-03T02:30:00.000Z</published>
+    <updated>2017-12-03T02:29:18.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们都知道，在Java中，方法的参数传递永远都是指值传递。让我们来看一看基本类型和集合的参数传递在内存中是如何体现的。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="http://neoyeelf.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="后台开发" scheme="http://neoyeelf.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="Java" scheme="http://neoyeelf.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/Java/"/>
+    
+    
+      <category term="Java" scheme="http://neoyeelf.github.io/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>利用docker-compose快速部署php-fpm+nginx环境</title>
