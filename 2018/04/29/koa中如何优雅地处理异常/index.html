@@ -171,8 +171,8 @@
         
 
             <li class="collapse-level-2" collapse-level="2">
-                <a class="no-padding" href="/categories/技术/后台开发/docker/">
-                    docker <span class="right">1 篇</span></a>
+                <a class="no-padding" href="/categories/技术/后台开发/Node/">
+                    Node <span class="right">2 篇</span></a>
                 </a>
             </li>
 
@@ -187,6 +187,14 @@
         
 
             <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/技术/后台开发/Java/">
+                    Java <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
                 <a class="no-padding" href="/categories/技术/后台开发/JAVA/">
                     JAVA <span class="right">2 篇</span></a>
                 </a>
@@ -195,16 +203,8 @@
         
 
             <li class="collapse-level-2" collapse-level="2">
-                <a class="no-padding" href="/categories/技术/后台开发/Node/">
-                    Node <span class="right">2 篇</span></a>
-                </a>
-            </li>
-
-        
-
-            <li class="collapse-level-2" collapse-level="2">
-                <a class="no-padding" href="/categories/技术/后台开发/Java/">
-                    Java <span class="right">1 篇</span></a>
+                <a class="no-padding" href="/categories/技术/后台开发/docker/">
+                    docker <span class="right">1 篇</span></a>
                 </a>
             </li>
 
@@ -335,17 +335,11 @@
 <p>那么有没有更好的方式呢？</p>
 <h3 id="更加优雅的方式"><a href="#更加优雅的方式" class="headerlink" title="更加优雅的方式"></a>更加优雅的方式</h3><p>有没有一种更优雅的方式来抛出错误呢？答案是肯定的。我们希望无论在哪里，直接一行代码就可以抛出错误，并被正确处理，返回相应的错误码和信息。</p>
 <p>利用<strong>koa中间件</strong>加上我们自定义的<strong>继承于Error构造器的方法</strong>便可以实现。</p>
-<ol>
-<li>定义HttpError和CustomError</li>
-</ol>
+<p>1.定义HttpError和CustomError</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">function CustomError (code, msg) &#123;</div><div class="line">  Error.call(this, &apos;&apos;)</div><div class="line"></div><div class="line">  this.code = code</div><div class="line">  this.msg = msg || ERROR_MSG[code] || &apos;unknown error&apos;</div><div class="line"></div><div class="line">  this.getCodeMsg = function () &#123;</div><div class="line">    return &#123;</div><div class="line">      code: this.code,</div><div class="line">      msg: this.msg</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">util.inherits(CustomError, Error)</div><div class="line"></div><div class="line">function HttpError (code, msg) &#123;</div><div class="line">  if (Object.values(HTTP_CODE).indexOf(code) &lt; 0) &#123;</div><div class="line">    throw Error(&apos;not an invalid http code&apos;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  CustomError.call(this, code, msg)</div><div class="line">&#125;</div><div class="line">util.inherits(HttpError, CustomError)</div></pre></td></tr></table></figure>
-<ol>
-<li>抛出错误</li>
-</ol>
+<p>2.抛出错误</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">router.get(&apos;/HttpError&apos;, (ctx, next) =&gt; &#123;</div><div class="line">  throw new HttpError(HTTP_CODE.FORBIDDEN)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">const somefunc = async (token) =&gt; &#123;</div><div class="line">  const res = await tokenExpire(token)</div><div class="line">  if (res) &#123;</div><div class="line">    throw new CustomError(CUSTOM_CODE.SOME_CUSTOM_ERROR)</div><div class="line">  &#125;</div><div class="line">  // do something</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ol>
-<li>koa中间件统一catch住Error，并返回相应code,msg</li>
-</ol>
+<p>3.koa中间件统一catch住Error，并返回相应code,msg</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">app.use((ctx, next) =&gt; &#123;</div><div class="line">  return next().catch((err) =&gt; &#123;</div><div class="line">    let code = 500</div><div class="line">    let msg = &apos;unknown error&apos;</div><div class="line"></div><div class="line">    if (err instanceof CustomError || err instanceof HttpError) &#123;</div><div class="line">      const res = err.getCodeMsg()</div><div class="line">      ctx.status = err instanceof HttpError ? res.code : 200</div><div class="line">      code = res.code</div><div class="line">      msg = res.msg</div><div class="line">    &#125; else &#123;</div><div class="line">      console.error(&apos;err&apos;, err)</div><div class="line">    &#125;</div><div class="line">    ctx.body = &#123;</div><div class="line">      code,</div><div class="line">      msg</div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>通过以上3步，抛出异常只用一行代码就搞定。<br>当你需要<strong>抛出http错误</strong>就<code>throw new HttpError(HTTP_CODE.FORBIDDEN)</code>，当你需要<strong>抛出业务错误码</strong>就<code>throw new CustomError(CUSTOM_CODE.SOME_CUSTOM_ERROR)</code>。<br>错误抛出后，会统一由koa中间件来处理。通过对Error的继承，我们将错误细分为http error和业务错误，从而可以更好地处理错误返回。</p>
 <p>这样一来，我们便可以在代码中去优雅地处理各种错误和异常了^_^</p>
