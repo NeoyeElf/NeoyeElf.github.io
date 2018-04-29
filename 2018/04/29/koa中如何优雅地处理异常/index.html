@@ -7,7 +7,7 @@
 
     
 
-    <title>归档：2017/12 | 刘文哲的技术博客 nEoYe&#39;s blog</title>
+    <title>koa中如何优雅地处理异常 | 刘文哲的技术博客 nEoYe&#39;s blog</title>
     <meta name="author" content="刘文哲">
     
     <meta name="description" content="人生本不易">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="koa中如何优雅地处理异常"/>
     <meta property="og:site_name" content="nEoYe&#39;s blog"/>
 
     
@@ -233,40 +233,143 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
-        <span class="breadcrumb">当前位置（归档）</span>
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/技术/">技术</a><a class="breadcrumb" href="/categories/技术/后台开发/">后台开发</a><a class="breadcrumb" href="/categories/技术/后台开发/Node/">Node</a>
+
+
         
 
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>koa中如何优雅地处理异常</h1>
+    
 
 
-    <ul class="collapsible mt-0" data-collapsible="accordion">
+            </div>
+            <time class="pink-link-context" datetime="2018-04-29T04:13:00.000Z"><a href="/2018/04/29/koa中如何优雅地处理异常/">2018-04-29</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
+            <a href="/tags/Node/" class="chip pink lighten-1">Node</a>
         
-            <li>
-                <div class="collapsible-header active">
-                    <i class="fa fa-archive"></i>2017
-                </div>
-                <div class="collapsible-body">
-                    <div class="collection">
-                        
-                            <a href="/2017/12/03/Java：关于值传递你需要了解的事情/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-12-03T02:30:00.000Z">2017-12-03</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                Java：关于值传递你需要了解的事情
-                            </a>
-                        
-                    </div>
-                </div>
-            </li>
+            <a href="/tags/koa/" class="chip pink lighten-1">koa</a>
         
-    </ul>
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#前言"><span class="section table-of-contents-text">前言</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#正文"><span class="section table-of-contents-text">正文</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#不那么优雅的方式"><span class="section table-of-contents-text">不那么优雅的方式</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#更加优雅的方式"><span class="section table-of-contents-text">更加优雅的方式</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#by-the-way"><span class="section table-of-contents-text">by the way</span></a></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <p>一个良好的编码习惯必然离不开异常处理，本文将主要介绍如何在koa框架下面优雅地抛出错误，并统一处理返回。</p>
+<a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>一个良好的编码习惯必然离不开异常处理，本文将主要介绍如何在koa框架下面优雅地抛出错误，并统一处理返回。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>koa是一个优秀的NodeJS web框架，当我们在开发web项目时，避免不了各种错误处理，包括Http错误以及自定义的业务逻辑错误。</p>
+<p>在NodeJS中，我们可以这样抛出错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if (someCondition) &#123;</div><div class="line">  throw Error(&apos;some error&apos;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="不那么优雅的方式"><a href="#不那么优雅的方式" class="headerlink" title="不那么优雅的方式"></a>不那么优雅的方式</h3><blockquote>
+<p>http 错误</p>
+</blockquote>
+<p>koa框架提供了<code>ctx.throw(400)</code>的方式，可以让我们方便地抛出http错误，但是如果你想同时返回一些有用信息怎么办？也许你会这么做：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ctx.status = 400</div><div class="line">ctx.body = &#123;</div><div class="line">  msg: &quot;some params is invalid&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>业务逻辑错误</p>
+</blockquote>
+<p>那么如果你是开发Restful API server，你肯定会需要定义若干业务逻辑错误码和说明，比如像下面这样：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">code码</th>
+<th style="text-align:center">说明 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"> 0</td>
+<td style="text-align:center">ok</td>
+</tr>
+<tr>
+<td style="text-align:left"> -1</td>
+<td style="text-align:center">服务器错误</td>
+</tr>
+<tr>
+<td style="text-align:left">4001</td>
+<td style="text-align:center">token过期</td>
+</tr>
+</tbody>
+</table>
+<p>在controller层面，你也许可以这样处理(示例代码中大写的都是常量定义，之后不再赘述)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">router.get(&apos;/&apos;, (ctx, next) =&gt; &#123;</div><div class="line">  if (tokenExpire(token)) &#123;</div><div class="line">    const errcode = ERROR_CODE.TOKEN_EXPIRED</div><div class="line">    ctx.body = &#123;</div><div class="line">      errcode,</div><div class="line">      msg: ERROR_MSG[errcode]</div><div class="line">    &#125;</div><div class="line">    return</div><div class="line">  &#125;</div><div class="line">  // do something</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>但是如果你想在service层面去抛出这个错误怎么办？这时候你也许会有2种处理方式：</p>
+<ul>
+<li><p>第一种，通过定义返回值来说明错误，在controller中判断返回值再返回相应错误码，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">const somefunc = async (token) =&gt; &#123;</div><div class="line">  const res = await tokenExpire(token)</div><div class="line">  if (res) &#123;</div><div class="line">    return false</div><div class="line">  &#125;</div><div class="line">  // do something</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>第二种，抛出Error，在controller中catch住异常，并对比err.message来返回相应错误码，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">const somefunc = async (token) =&gt; &#123;</div><div class="line">  const res = await tokenExpire(token)</div><div class="line">  if (res) &#123;</div><div class="line">    throw Error(ERROR_MSG.TOKEN_EXPIRED)</div><div class="line">  &#125;</div><div class="line">  // do something</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>那么有没有更好的方式呢？</p>
+<h3 id="更加优雅的方式"><a href="#更加优雅的方式" class="headerlink" title="更加优雅的方式"></a>更加优雅的方式</h3><p>有没有一种更优雅的方式来抛出错误呢？答案是肯定的。我们希望无论在哪里，直接一行代码就可以抛出错误，并被正确处理，返回相应的错误码和信息。</p>
+<p>利用<strong>koa中间件</strong>加上我们自定义的<strong>继承于Error构造器的方法</strong>便可以实现。</p>
+<ol>
+<li>定义HttpError和CustomError</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">function CustomError (code, msg) &#123;</div><div class="line">  Error.call(this, &apos;&apos;)</div><div class="line"></div><div class="line">  this.code = code</div><div class="line">  this.msg = msg || ERROR_MSG[code] || &apos;unknown error&apos;</div><div class="line"></div><div class="line">  this.getCodeMsg = function () &#123;</div><div class="line">    return &#123;</div><div class="line">      code: this.code,</div><div class="line">      msg: this.msg</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">util.inherits(CustomError, Error)</div><div class="line"></div><div class="line">function HttpError (code, msg) &#123;</div><div class="line">  if (Object.values(HTTP_CODE).indexOf(code) &lt; 0) &#123;</div><div class="line">    throw Error(&apos;not an invalid http code&apos;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  CustomError.call(this, code, msg)</div><div class="line">&#125;</div><div class="line">util.inherits(HttpError, CustomError)</div></pre></td></tr></table></figure>
+<ol>
+<li>抛出错误</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">router.get(&apos;/HttpError&apos;, (ctx, next) =&gt; &#123;</div><div class="line">  throw new HttpError(HTTP_CODE.FORBIDDEN)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">const somefunc = async (token) =&gt; &#123;</div><div class="line">  const res = await tokenExpire(token)</div><div class="line">  if (res) &#123;</div><div class="line">    throw new CustomError(CUSTOM_CODE.SOME_CUSTOM_ERROR)</div><div class="line">  &#125;</div><div class="line">  // do something</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>koa中间件统一catch住Error，并返回相应code,msg</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">app.use((ctx, next) =&gt; &#123;</div><div class="line">  return next().catch((err) =&gt; &#123;</div><div class="line">    let code = 500</div><div class="line">    let msg = &apos;unknown error&apos;</div><div class="line"></div><div class="line">    if (err instanceof CustomError || err instanceof HttpError) &#123;</div><div class="line">      const res = err.getCodeMsg()</div><div class="line">      ctx.status = err instanceof HttpError ? res.code : 200</div><div class="line">      code = res.code</div><div class="line">      msg = res.msg</div><div class="line">    &#125; else &#123;</div><div class="line">      console.error(&apos;err&apos;, err)</div><div class="line">    &#125;</div><div class="line">    ctx.body = &#123;</div><div class="line">      code,</div><div class="line">      msg</div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>通过以上3步，抛出异常只用一行代码就搞定。<br>当你需要<strong>抛出http错误</strong>就<code>throw new HttpError(HTTP_CODE.FORBIDDEN)</code>，当你需要<strong>抛出业务错误码</strong>就<code>throw new CustomError(CUSTOM_CODE.SOME_CUSTOM_ERROR)</code>。<br>错误抛出后，会统一由koa中间件来处理。通过对Error的继承，我们将错误细分为http error和业务错误，从而可以更好地处理错误返回。</p>
+<p>这样一来，我们便可以在代码中去优雅地处理各种错误和异常了^_^</p>
+<h2 id="by-the-way"><a href="#by-the-way" class="headerlink" title="by the way"></a>by the way</h2><p>我搭了一个<a href="https://github.com/NeoyeElf/koa2-rest-scaffold" target="_blank" rel="external">koa的脚手架</a>，里面包含本文中提到的优雅地错误处理方式。欢迎star :)</p>
+
+                
+
+
+<p class="pink-link-context">
+    <a href="/2018/01/18/一次Node.js的性能问题排查/" rel="next" title="一次Node.js的性能问题排查">
+    下一篇：一次Node.js的性能问题排查
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
 
 
 </div>
