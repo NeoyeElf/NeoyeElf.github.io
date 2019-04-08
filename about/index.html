@@ -38,7 +38,7 @@
 <body>
     <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
 
-    <nav class="light-blue">
+    <nav class="indigo">
     <div class="nav-wrapper">
         <a href="#" data-activates="main-menu" class="button-collapse">
             <i class="fa fa-navicon"></i>
@@ -156,7 +156,7 @@
 
             <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/技术/">
-                    技术 <span class="right">10 篇</span></a>
+                    技术 <span class="right">11 篇</span></a>
                 </a>
             </li>
 
@@ -164,15 +164,15 @@
 
             <li class="collapse-level-1" collapse-level="1">
                 <a class="no-padding" href="/categories/技术/后台开发/">
-                    后台开发 <span class="right">10 篇</span></a>
+                    后台开发 <span class="right">11 篇</span></a>
                 </a>
             </li>
 
         
 
             <li class="collapse-level-2" collapse-level="2">
-                <a class="no-padding" href="/categories/技术/后台开发/PHP/">
-                    PHP <span class="right">3 篇</span></a>
+                <a class="no-padding" href="/categories/技术/后台开发/Golang/">
+                    Golang <span class="right">1 篇</span></a>
                 </a>
             </li>
 
@@ -187,14 +187,6 @@
         
 
             <li class="collapse-level-2" collapse-level="2">
-                <a class="no-padding" href="/categories/技术/后台开发/Node/">
-                    Node <span class="right">2 篇</span></a>
-                </a>
-            </li>
-
-        
-
-            <li class="collapse-level-2" collapse-level="2">
                 <a class="no-padding" href="/categories/技术/后台开发/Java/">
                     Java <span class="right">1 篇</span></a>
                 </a>
@@ -203,8 +195,24 @@
         
 
             <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/技术/后台开发/PHP/">
+                    PHP <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
                 <a class="no-padding" href="/categories/技术/后台开发/docker/">
                     docker <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/技术/后台开发/Node/">
+                    Node <span class="right">2 篇</span></a>
                 </a>
             </li>
 
@@ -237,7 +245,7 @@
 
 <div class="container main-container">
     <div class="card about-page row">
-        <div class="header light-blue">
+        <div class="header indigo">
             <div class="avatar-wrapper center-align">
                 <img class="avatar-image circle responsive-img" src="https://s2.ax1x.com/2019/03/01/kHrQS0.jpg" alt="User Avatar">
             </div>
@@ -268,9 +276,9 @@
         <article>
             <div class="card-content">
                 <section class="about-me">
-                    <h1 class="light-blue-text">
+                    <h1 class="indigo-text">
                         <i class="fa fa-street-view"></i>关于</h1>
-                    <div class="entry pink-link-context">
+                    <div class="entry teal-link-context">
                         <p>大家好，我是刘文哲。欢迎来到我的个人技术博客。<br>该博客主要用来记录我平时的技术积累、总结，有时也会写些生活总结。希望自己能一直坚持下去。<br>我的技术主要偏向后台开发，研究生期间主要使用的是php开发web后台，《青桔音乐》是我开发的第一个大型web项目。除了php，python和java也都使用过，做了若干小项目。</p>
 <p>毕业后，去了阿里云，主要负责的是<strong>云监控的报警服务</strong>，使用java语言做后台开发。现在回到了武汉，在武汉初心科技（产品：<a href="https://shimo.im" target="_blank" rel="external">石墨文档</a>）做后台研发工程师，<strong>主攻Node &amp; Golang</strong></p>
 <h3 id="翻译文章"><a href="#翻译文章" class="headerlink" title="翻译文章"></a>翻译文章</h3><ul>
@@ -290,7 +298,7 @@
 
                 
                 <section class="skills">
-                    <h1 class="light-blue-text">
+                    <h1 class="indigo-text">
                         <i class="fa fa-tasks"></i>&nbsp;技能</h1>
                     <ul class="skill-list">
                         
@@ -664,7 +672,7 @@
   </div>
 
     </main>
-    <footer class="page-footer light-blue darken-1">
+    <footer class="page-footer indigo darken-1">
     
     <div class="footer-container container">
         <div class="row">
@@ -703,7 +711,7 @@
     </div>
     
 
-    <div class="footer-copyright pink-link-context">
+    <div class="footer-copyright teal-link-context">
         <div class="container">
             © 2016 neoyeelf.github.io, All rights reserved.
             <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -800,7 +808,7 @@
             $('li.tab a').hover(function() {
                 $(this).toggleClass('text-lighten-4');
             });
-            $('.indicator').addClass('pink lighten-2');
+            $('.indicator').addClass('teal lighten-2');
 
             
             // 添加new标签
@@ -879,7 +887,7 @@
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword teal lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -901,7 +909,7 @@
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword teal lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

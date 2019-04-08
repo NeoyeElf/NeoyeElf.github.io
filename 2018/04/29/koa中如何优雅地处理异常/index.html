@@ -38,7 +38,7 @@
 <body>
     <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
 
-    <nav class="light-blue">
+    <nav class="indigo">
     <div class="nav-wrapper">
         <a href="#" data-activates="main-menu" class="button-collapse">
             <i class="fa fa-navicon"></i>
@@ -156,7 +156,7 @@
 
             <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/技术/">
-                    技术 <span class="right">10 篇</span></a>
+                    技术 <span class="right">11 篇</span></a>
                 </a>
             </li>
 
@@ -164,15 +164,15 @@
 
             <li class="collapse-level-1" collapse-level="1">
                 <a class="no-padding" href="/categories/技术/后台开发/">
-                    后台开发 <span class="right">10 篇</span></a>
+                    后台开发 <span class="right">11 篇</span></a>
                 </a>
             </li>
 
         
 
             <li class="collapse-level-2" collapse-level="2">
-                <a class="no-padding" href="/categories/技术/后台开发/PHP/">
-                    PHP <span class="right">3 篇</span></a>
+                <a class="no-padding" href="/categories/技术/后台开发/Golang/">
+                    Golang <span class="right">1 篇</span></a>
                 </a>
             </li>
 
@@ -187,14 +187,6 @@
         
 
             <li class="collapse-level-2" collapse-level="2">
-                <a class="no-padding" href="/categories/技术/后台开发/Node/">
-                    Node <span class="right">2 篇</span></a>
-                </a>
-            </li>
-
-        
-
-            <li class="collapse-level-2" collapse-level="2">
                 <a class="no-padding" href="/categories/技术/后台开发/Java/">
                     Java <span class="right">1 篇</span></a>
                 </a>
@@ -203,8 +195,24 @@
         
 
             <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/技术/后台开发/PHP/">
+                    PHP <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
                 <a class="no-padding" href="/categories/技术/后台开发/docker/">
                     docker <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/技术/后台开发/Node/">
+                    Node <span class="right">2 篇</span></a>
                 </a>
             </li>
 
@@ -262,7 +270,7 @@
 
 
             </div>
-            <time class="pink-link-context" datetime="2018-04-29T04:13:00.000Z"><a href="/2018/04/29/koa中如何优雅地处理异常/">2018-04-29</a></time>
+            <time class="teal-link-context" datetime="2018-04-29T04:13:00.000Z"><a href="/2018/04/29/koa中如何优雅地处理异常/">2018-04-29</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -272,19 +280,19 @@
             
     <div class="tags-row">
         
-            <a href="/tags/Node/" class="chip pink lighten-1">Node</a>
+            <a href="/tags/Node/" class="chip teal lighten-1">Node</a>
         
-            <a href="/tags/koa/" class="chip pink lighten-1">koa</a>
+            <a href="/tags/koa/" class="chip teal lighten-1">koa</a>
         
     </div>
 
 
-            <div class="toc pink-link-context hide-on-med-and-down">
+            <div class="toc teal-link-context hide-on-med-and-down">
     <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#前言"><span class="section table-of-contents-text">前言</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#正文"><span class="section table-of-contents-text">正文</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#不那么优雅的方式"><span class="section table-of-contents-text">不那么优雅的方式</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#更加优雅的方式"><span class="section table-of-contents-text">更加优雅的方式</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#by-the-way"><span class="section table-of-contents-text">by the way</span></a></li></ol>
 </div>
 
 
-            <div class="entry pink-link-context">
+            <div class="entry teal-link-context">
                 <p>一个良好的编码习惯必然离不开异常处理，本文将主要介绍如何在koa框架下面优雅地抛出错误，并统一处理返回。</p>
 <a id="more"></a>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>一个良好的编码习惯必然离不开异常处理，本文将主要介绍如何在koa框架下面优雅地抛出错误，并统一处理返回。</p>
@@ -346,9 +354,15 @@
 <h2 id="by-the-way"><a href="#by-the-way" class="headerlink" title="by the way"></a>by the way</h2><p>我搭了一个<a href="https://github.com/NeoyeElf/koa2-rest-scaffold" target="_blank" rel="external">koa的脚手架</a>，里面包含本文中提到的优雅地错误处理方式。欢迎star :)</p>
 
                 
+<p class="teal-link-context">
+    <a href="/2019/04/07/golang也能实现抽象类了？/" rel="next" title="golang也能实现抽象类了？">
+    上一篇：golang也能实现抽象类了？
+  </a>
+</p>
 
 
-<p class="pink-link-context">
+
+<p class="teal-link-context">
     <a href="/2018/01/18/一次Node.js的性能问题排查/" rel="next" title="一次Node.js的性能问题排查">
     下一篇：一次Node.js的性能问题排查
   </a>
@@ -379,7 +393,7 @@
   </div>
 
     </main>
-    <footer class="page-footer light-blue darken-1">
+    <footer class="page-footer indigo darken-1">
     
     <div class="footer-container container">
         <div class="row">
@@ -418,7 +432,7 @@
     </div>
     
 
-    <div class="footer-copyright pink-link-context">
+    <div class="footer-copyright teal-link-context">
         <div class="container">
             © 2016 neoyeelf.github.io, All rights reserved.
             <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -515,7 +529,7 @@
             $('li.tab a').hover(function() {
                 $(this).toggleClass('text-lighten-4');
             });
-            $('.indicator').addClass('pink lighten-2');
+            $('.indicator').addClass('teal lighten-2');
 
             
             // 添加new标签
@@ -594,7 +608,7 @@
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword teal lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -616,7 +630,7 @@
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword teal lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

@@ -38,7 +38,7 @@
 <body>
     <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
 
-    <nav class="light-blue">
+    <nav class="indigo">
     <div class="nav-wrapper">
         <a href="#" data-activates="main-menu" class="button-collapse">
             <i class="fa fa-navicon"></i>
@@ -156,7 +156,7 @@
 
             <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/技术/">
-                    技术 <span class="right">10 篇</span></a>
+                    技术 <span class="right">11 篇</span></a>
                 </a>
             </li>
 
@@ -164,15 +164,15 @@
 
             <li class="collapse-level-1" collapse-level="1">
                 <a class="no-padding" href="/categories/技术/后台开发/">
-                    后台开发 <span class="right">10 篇</span></a>
+                    后台开发 <span class="right">11 篇</span></a>
                 </a>
             </li>
 
         
 
             <li class="collapse-level-2" collapse-level="2">
-                <a class="no-padding" href="/categories/技术/后台开发/PHP/">
-                    PHP <span class="right">3 篇</span></a>
+                <a class="no-padding" href="/categories/技术/后台开发/Golang/">
+                    Golang <span class="right">1 篇</span></a>
                 </a>
             </li>
 
@@ -187,14 +187,6 @@
         
 
             <li class="collapse-level-2" collapse-level="2">
-                <a class="no-padding" href="/categories/技术/后台开发/Node/">
-                    Node <span class="right">2 篇</span></a>
-                </a>
-            </li>
-
-        
-
-            <li class="collapse-level-2" collapse-level="2">
                 <a class="no-padding" href="/categories/技术/后台开发/Java/">
                     Java <span class="right">1 篇</span></a>
                 </a>
@@ -203,8 +195,24 @@
         
 
             <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/技术/后台开发/PHP/">
+                    PHP <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
                 <a class="no-padding" href="/categories/技术/后台开发/docker/">
                     docker <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/技术/后台开发/Node/">
+                    Node <span class="right">2 篇</span></a>
                 </a>
             </li>
 
@@ -262,7 +270,7 @@
 
 
             </div>
-            <time class="pink-link-context" datetime="2017-10-03T03:28:00.000Z"><a href="/2017/10/03/ArrayList和LinkedList的效率对比/">2017-10-03</a></time>
+            <time class="teal-link-context" datetime="2017-10-03T03:28:00.000Z"><a href="/2017/10/03/ArrayList和LinkedList的效率对比/">2017-10-03</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -272,17 +280,17 @@
             
     <div class="tags-row">
         
-            <a href="/tags/JAVA/" class="chip pink lighten-1">JAVA</a>
+            <a href="/tags/JAVA/" class="chip teal lighten-1">JAVA</a>
         
     </div>
 
 
-            <div class="toc pink-link-context hide-on-med-and-down">
+            <div class="toc teal-link-context hide-on-med-and-down">
     <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#正文"><span class="section table-of-contents-text">正文</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#存储结构"><span class="section table-of-contents-text">存储结构</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#插入"><span class="section table-of-contents-text">插入</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#取元素"><span class="section table-of-contents-text">取元素</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#删除"><span class="section table-of-contents-text">删除</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#Iterator"><span class="section table-of-contents-text">Iterator</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#总结"><span class="section table-of-contents-text">总结</span></a></li></ol></li></ol>
 </div>
 
 
-            <div class="entry pink-link-context">
+            <div class="entry teal-link-context">
                 <p>List相信大家都使用得很多，其中ArrayList和LinkedList是使用最多的2个，本文将从源码角度解读2者的异同，效率和使用场景。<br><a id="more"></a></p>
 <h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h4><ul>
 <li>LinkedList是靠一个名为Node的数据结构来存储数据和前后元素的指针，和双向链表类似。first和last分别存储了第一个和最后一个元素</li>
@@ -334,7 +342,7 @@
 </ul>
 
                 
-<p class="pink-link-context">
+<p class="teal-link-context">
     <a href="/2017/11/02/利用docker-compose快速部署php-fpm+nginx环境/" rel="next" title="利用docker-compose快速部署php-fpm+nginx环境">
     上一篇：利用docker-compose快速部署php-fpm+nginx环境
   </a>
@@ -342,7 +350,7 @@
 
 
 
-<p class="pink-link-context">
+<p class="teal-link-context">
     <a href="/2016/03/10/PHP开发项目时的api设计和代码组织心得/" rel="next" title="API设计和代码结构组织心得">
     下一篇：API设计和代码结构组织心得
   </a>
@@ -373,7 +381,7 @@
   </div>
 
     </main>
-    <footer class="page-footer light-blue darken-1">
+    <footer class="page-footer indigo darken-1">
     
     <div class="footer-container container">
         <div class="row">
@@ -412,7 +420,7 @@
     </div>
     
 
-    <div class="footer-copyright pink-link-context">
+    <div class="footer-copyright teal-link-context">
         <div class="container">
             © 2016 neoyeelf.github.io, All rights reserved.
             <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -509,7 +517,7 @@
             $('li.tab a').hover(function() {
                 $(this).toggleClass('text-lighten-4');
             });
-            $('.indicator').addClass('pink lighten-2');
+            $('.indicator').addClass('teal lighten-2');
 
             
             // 添加new标签
@@ -588,7 +596,7 @@
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword teal lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -610,7 +618,7 @@
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword teal lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

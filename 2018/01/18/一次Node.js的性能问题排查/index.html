@@ -38,7 +38,7 @@
 <body>
     <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
 
-    <nav class="light-blue">
+    <nav class="indigo">
     <div class="nav-wrapper">
         <a href="#" data-activates="main-menu" class="button-collapse">
             <i class="fa fa-navicon"></i>
@@ -156,7 +156,7 @@
 
             <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/技术/">
-                    技术 <span class="right">10 篇</span></a>
+                    技术 <span class="right">11 篇</span></a>
                 </a>
             </li>
 
@@ -164,15 +164,15 @@
 
             <li class="collapse-level-1" collapse-level="1">
                 <a class="no-padding" href="/categories/技术/后台开发/">
-                    后台开发 <span class="right">10 篇</span></a>
+                    后台开发 <span class="right">11 篇</span></a>
                 </a>
             </li>
 
         
 
             <li class="collapse-level-2" collapse-level="2">
-                <a class="no-padding" href="/categories/技术/后台开发/PHP/">
-                    PHP <span class="right">3 篇</span></a>
+                <a class="no-padding" href="/categories/技术/后台开发/Golang/">
+                    Golang <span class="right">1 篇</span></a>
                 </a>
             </li>
 
@@ -187,14 +187,6 @@
         
 
             <li class="collapse-level-2" collapse-level="2">
-                <a class="no-padding" href="/categories/技术/后台开发/Node/">
-                    Node <span class="right">2 篇</span></a>
-                </a>
-            </li>
-
-        
-
-            <li class="collapse-level-2" collapse-level="2">
                 <a class="no-padding" href="/categories/技术/后台开发/Java/">
                     Java <span class="right">1 篇</span></a>
                 </a>
@@ -203,8 +195,24 @@
         
 
             <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/技术/后台开发/PHP/">
+                    PHP <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
                 <a class="no-padding" href="/categories/技术/后台开发/docker/">
                     docker <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-2" collapse-level="2">
+                <a class="no-padding" href="/categories/技术/后台开发/Node/">
+                    Node <span class="right">2 篇</span></a>
                 </a>
             </li>
 
@@ -262,7 +270,7 @@
 
 
             </div>
-            <time class="pink-link-context" datetime="2018-01-18T11:40:00.000Z"><a href="/2018/01/18/一次Node.js的性能问题排查/">2018-01-18</a></time>
+            <time class="teal-link-context" datetime="2018-01-18T11:40:00.000Z"><a href="/2018/01/18/一次Node.js的性能问题排查/">2018-01-18</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -272,17 +280,17 @@
             
     <div class="tags-row">
         
-            <a href="/tags/Node/" class="chip pink lighten-1">Node</a>
+            <a href="/tags/Node/" class="chip teal lighten-1">Node</a>
         
     </div>
 
 
-            <div class="toc pink-link-context hide-on-med-and-down">
+            <div class="toc teal-link-context hide-on-med-and-down">
     <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#初步定位问题"><span class="section table-of-contents-text">初步定位问题</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#定位问题细节"><span class="section table-of-contents-text">定位问题细节</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#进一步优化"><span class="section table-of-contents-text">进一步优化</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#思考-——-defaults方法剖析"><span class="section table-of-contents-text">思考 —— defaults方法剖析</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#总结"><span class="section table-of-contents-text">总结</span></a></li></ol>
 </div>
 
 
-            <div class="entry pink-link-context">
+            <div class="entry teal-link-context">
                 <p>前几天，我们发现了一个性能问题，当数据量过大时，由于请求超时，导致我们的web应用的某个页面数据加载不出来。这篇文章用来记录下当时的排查过程，以及一些思考。</p>
 <a id="more"></a>
 <h3 id="初步定位问题"><a href="#初步定位问题" class="headerlink" title="初步定位问题"></a>初步定位问题</h3><p>通过查看请求日志，我们定位到了Node的某个接口。一开始，我们认为是MySQL的IO耗时过长导致的，但是通过查看MySQL的慢日志并没有发现相关的查询语句，从而排除了MySQL查询的因素。</p>
@@ -305,7 +313,7 @@
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>最后，作为一个完备、全面的第三方库来说，适应各种情况的输入值并做完整的参数校验是很有必要的。所以当你需要使用某个第三方库的时候，不妨想一想是否有必要，是否可以直接用更简单直接的方式实现。有时候，最直接的方式，也许是最快的 :)。</p>
 
                 
-<p class="pink-link-context">
+<p class="teal-link-context">
     <a href="/2018/04/29/koa中如何优雅地处理异常/" rel="next" title="koa中如何优雅地处理异常">
     上一篇：koa中如何优雅地处理异常
   </a>
@@ -313,7 +321,7 @@
 
 
 
-<p class="pink-link-context">
+<p class="teal-link-context">
     <a href="/2017/12/03/Java：关于值传递你需要了解的事情/" rel="next" title="Java：关于值传递你需要了解的事情">
     下一篇：Java：关于值传递你需要了解的事情
   </a>
@@ -344,7 +352,7 @@
   </div>
 
     </main>
-    <footer class="page-footer light-blue darken-1">
+    <footer class="page-footer indigo darken-1">
     
     <div class="footer-container container">
         <div class="row">
@@ -383,7 +391,7 @@
     </div>
     
 
-    <div class="footer-copyright pink-link-context">
+    <div class="footer-copyright teal-link-context">
         <div class="container">
             © 2016 neoyeelf.github.io, All rights reserved.
             <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -480,7 +488,7 @@
             $('li.tab a').hover(function() {
                 $(this).toggleClass('text-lighten-4');
             });
-            $('.indicator').addClass('pink lighten-2');
+            $('.indicator').addClass('teal lighten-2');
 
             
             // 添加new标签
@@ -559,7 +567,7 @@
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword teal lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -581,7 +589,7 @@
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword teal lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

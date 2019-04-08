@@ -7,7 +7,7 @@
 
     
 
-    <title>归档：2017 | 刘文哲的技术博客 nEoYe&#39;s blog</title>
+    <title>golang也能实现抽象类了？ | 刘文哲的技术博客 nEoYe&#39;s blog</title>
     <meta name="author" content="刘文哲">
     
     <meta name="description" content="人生本不易">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="golang也能实现抽象类了？"/>
     <meta property="og:site_name" content="nEoYe&#39;s blog"/>
 
     
@@ -241,52 +241,107 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
-        <span class="breadcrumb">当前位置（归档）</span>
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/技术/">技术</a><a class="breadcrumb" href="/categories/技术/后台开发/">后台开发</a><a class="breadcrumb" href="/categories/技术/后台开发/Golang/">Golang</a>
+
+
         
 
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>golang也能实现抽象类了？</h1>
+    
 
 
-    <ul class="collapsible mt-0" data-collapsible="accordion">
+            </div>
+            <time class="teal-link-context" datetime="2019-04-07T12:12:00.000Z"><a href="/2019/04/07/golang也能实现抽象类了？/">2019-04-07</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
+            <a href="/tags/Golang/" class="chip teal lighten-1">Golang</a>
         
-            <li>
-                <div class="collapsible-header active">
-                    <i class="fa fa-archive"></i>2017
-                </div>
-                <div class="collapsible-body">
-                    <div class="collection">
-                        
-                            <a href="/2017/12/03/Java：关于值传递你需要了解的事情/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-12-03T02:30:00.000Z">2017-12-03</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                Java：关于值传递你需要了解的事情
-                            </a>
-                        
-                            <a href="/2017/11/02/利用docker-compose快速部署php-fpm+nginx环境/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-11-02T12:30:00.000Z">2017-11-02</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                利用docker-compose快速部署php-fpm+nginx环境
-                            </a>
-                        
-                            <a href="/2017/10/03/ArrayList和LinkedList的效率对比/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-10-03T03:28:00.000Z">2017-10-03</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                ArrayList和LinkedList的效率对比
-                            </a>
-                        
-                    </div>
-                </div>
-            </li>
-        
-    </ul>
+    </div>
+
+
+            <div class="toc teal-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#前言"><span class="section table-of-contents-text">前言</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#正文"><span class="section table-of-contents-text">正文</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#面向对象语言中抽象类的实现"><span class="section table-of-contents-text">面向对象语言中抽象类的实现</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#golang-中实现抽象类的方式"><span class="section table-of-contents-text">golang 中实现抽象类的方式</span></a></li></ol></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#总结"><span class="section table-of-contents-text">总结</span></a></li></ol>
+</div>
+
+
+            <div class="entry teal-link-context">
+                <p>本文介绍了一种通过 struct 和 interface 来在 golang 中实现抽象类的方式。</p>
+<a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 Java 这种面向对象的语言中，抽象类和接口是我们经常会运用到的 2 种对抽象概念进行定义的机制。在 golang 中，没有类和继承的概念。golang 中有结构体（struct），和面向对象语言中的类相似。golang 中也有接口（interface），接口可以定义一组不含有具体实现的方法，其提供了一种方式来说明对象的行为。</p>
+<p>然而，在某些情况下，我们需要使用抽象类继承，来帮助我们写出更优雅的代码。可是在 golang 中又没有抽象类的概念，本文将介绍一种通过 struct 和 interface 来在 golang 中实现抽象类的方法。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>首先，我们会用 Java 语言作为示例，来看看如何在面向对象语言中实现抽象类。接着换 golang 语言，通过 struct 和 interface 来实现抽象类，完成相同的功能。</p>
+<h4 id="面向对象语言中抽象类的实现"><a href="#面向对象语言中抽象类的实现" class="headerlink" title="面向对象语言中抽象类的实现"></a>面向对象语言中抽象类的实现</h4><p>假设我们需要实现下面这样的几个类（使用 Java 为例）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Game</span></span></div><div class="line"><span class="class"></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        System.out.println(<span class="keyword">this</span>.name() + <span class="string">" is awesome!"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> String <span class="title">name</span><span class="params">()</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Dota</span> <span class="keyword">extends</span> <span class="title">Game</span></span></div><div class="line"><span class="class"></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">name</span><span class="params">()</span></span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"Dota"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LOL</span> <span class="keyword">extends</span> <span class="title">Game</span></span></div><div class="line"><span class="class"></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">name</span><span class="params">()</span></span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"LOL"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们定义了 Game 抽象类，在此类中定义了 <code>public abstract String name();</code> 一个抽象方法和 <code>public void play()</code> 这样一个公开方法。然后我们定义了 <code>Dota</code> 和 <code>LOL</code> 2个类去继承 <code>Game</code>，并各自实现了 <code>public String name()</code>。</p>
+<p>接下来让我们看看如何在 golang 中实现抽象类。</p>
+<h4 id="golang-中实现抽象类的方式"><a href="#golang-中实现抽象类的方式" class="headerlink" title="golang 中实现抽象类的方式"></a>golang 中实现抽象类的方式</h4><ul>
+<li>定义 interface</li>
+</ul>
+<p>首先，我们需要将抽象方法定义在 interface 中。</p>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span> IGame <span class="keyword">interface</span> &#123;</div><div class="line">	Name() <span class="keyword">string</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>定义”父类”</li>
+</ul>
+<p>然后，我们需要使用 struct 实现公共方法。</p>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span> Game <span class="keyword">struct</span> &#123;&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(g *Game)</span> <span class="title">play</span><span class="params">(game IGame)</span></span> &#123;</div><div class="line">	fmt.Printf(fmt.Sprintf(<span class="string">"%s is awesome!"</span>, game.Name()))</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里是重点，我们将 <code>game IGame</code> 传了进来。这样我们便可以调用”子类”的方法来获取名字。<strong>从而间接地实现了在公共方法中调用不同”子类”的实现的抽象方法。</strong></p>
+<ul>
+<li>定义”子类”</li>
+</ul>
+<p>接着，我们再定义”Dota”和”LOL”这 2 个 struct 即可。</p>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span> Dota <span class="keyword">struct</span> &#123;</div><div class="line">    Game</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d *Dota)</span> <span class="title">Name</span><span class="params">()</span> <span class="title">string</span></span> &#123;</div><div class="line">	<span class="keyword">return</span> <span class="string">"Dota"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">type</span> LOL <span class="keyword">struct</span> &#123;</div><div class="line">    Game</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(l *LOL)</span> <span class="title">Name</span><span class="params">()</span> <span class="title">string</span></span> &#123;</div><div class="line">	<span class="keyword">return</span> <span class="string">"LOL"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>大功告成</li>
+</ul>
+<p>现在，在初始化”Dota”和”LOL”结构体后，便可以调用 <code>func (g *Game) play(game IGame)</code> 方法了。</p>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">dota := &amp;Dota&#123;&#125;</div><div class="line">dota.play(dota)</div><div class="line"></div><div class="line">lol := &amp;LOL&#123;&#125;</div><div class="line">lol.play(lol)</div><div class="line"></div><div class="line"><span class="comment">// 输出:</span></div><div class="line"><span class="comment">//Dota is awesome!</span></div><div class="line"><span class="comment">//LOL is awesome!</span></div></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文通过 struct 和 interface 的组合，提供了一种思路，间接实现了面向对象语言中的抽象类继承的模式。旨在提供一种思路，希望能帮助到需要的同学，欢迎讨论 :)</p>
+
+                
+
+
+<p class="teal-link-context">
+    <a href="/2018/04/29/koa中如何优雅地处理异常/" rel="next" title="koa中如何优雅地处理异常">
+    下一篇：koa中如何优雅地处理异常
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
 
 
 </div>

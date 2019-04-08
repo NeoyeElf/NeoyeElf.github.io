@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://neoyeelf.github.io/"/>
-  <updated>2018-04-29T06:05:21.984Z</updated>
+  <updated>2019-04-08T09:23:42.493Z</updated>
   <id>http://neoyeelf.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>golang也能实现抽象类了？</title>
+    <link href="http://neoyeelf.github.io/2019/04/07/golang%E4%B9%9F%E8%83%BD%E5%AE%9E%E7%8E%B0%E6%8A%BD%E8%B1%A1%E7%B1%BB%E4%BA%86%EF%BC%9F/"/>
+    <id>http://neoyeelf.github.io/2019/04/07/golang也能实现抽象类了？/</id>
+    <published>2019-04-07T12:12:00.000Z</published>
+    <updated>2019-04-08T09:23:42.493Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文介绍了一种通过 struct 和 interface 来在 golang 中实现抽象类的方式。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="http://neoyeelf.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="后台开发" scheme="http://neoyeelf.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="Golang" scheme="http://neoyeelf.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/Golang/"/>
+    
+    
+      <category term="Golang" scheme="http://neoyeelf.github.io/tags/Golang/"/>
+    
+  </entry>
   
   <entry>
     <title>koa中如何优雅地处理异常</title>
